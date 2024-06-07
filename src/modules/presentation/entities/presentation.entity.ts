@@ -9,6 +9,6 @@ export class Presentation {
   @Column({ unique: true })
   title: string;
 
-  @OneToMany(() => Page, (page) => page.presentation)
+  @OneToMany(() => Page, (page) => page.presentation, { onDelete: 'CASCADE' })
   pages: Page[];
 }

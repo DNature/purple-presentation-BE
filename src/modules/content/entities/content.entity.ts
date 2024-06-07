@@ -12,7 +12,7 @@ export class Content {
   @Column()
   data: string;
 
-  @ManyToOne(() => Page, (page) => page.contents)
+  @ManyToOne(() => Page, (page) => page.contents, { onDelete: 'CASCADE' })
   page: Page;
 
   @Column({ default: 0 })

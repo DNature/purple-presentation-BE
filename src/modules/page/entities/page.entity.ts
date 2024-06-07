@@ -19,6 +19,6 @@ export class Page {
   @ManyToOne(() => Presentation, (presentation) => presentation.pages)
   presentation: Presentation;
 
-  @OneToMany(() => Content, (content) => content.page)
+  @OneToMany(() => Content, (content) => content.page, { onDelete: 'CASCADE' })
   contents: Content[];
 }
